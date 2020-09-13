@@ -8,7 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "ky": "^0.23.0",
+    "luxon": "^1.25.0",
+    "mongodb": "^3.6.2",
     "next": "9.5.3",
+    "next-connect": "^0.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }
