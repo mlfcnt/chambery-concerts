@@ -8,13 +8,17 @@ const Home = ({ concerts }) => {
 
 export default Home;
 
-const rootUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://chambe-concerts.herokuapp.com"
-    : "http://localhost:3000";
+const rootUrl = "http://localhost:3000";
+// process.env.NODE_ENV === "production"
+//   ? "https://chambe-concerts.herokuapp.com"
+//   : "http://localhost:3000";
+// process.env.NODE_ENV === "production"
+//   ? "https://chambe-concerts.herokuapp.com"
+//   : "http://localhost:3000";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${rootUrl}/api/concerts/concerts_dates`);
-  const concerts = await res.json();
+  // const res = await fetch(`${rootUrl}/api/concerts/concerts_dates`);
+  // const concerts = await res.json();
+  const concerts = [];
   return { props: { concerts } };
 };
