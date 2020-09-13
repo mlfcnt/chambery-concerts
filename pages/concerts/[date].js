@@ -4,7 +4,6 @@ import { useState } from "react";
 export default function Concert({ concerts: cc }) {
   const [concerts] = useState(cc);
   if (!concerts.length) return <p>Chargement...</p>;
-  // console.log(concerts);
   return concerts.map(({ startDate, artist, venue }) => {
     console.log("here", artist.name);
     <div>
@@ -18,7 +17,6 @@ export default function Concert({ concerts: cc }) {
 export async function getStaticPaths() {
   // const paths = (await getAllDates()) || [{ params: { date: "22-22-22" } }];
   const paths = [{ params: { date: "22-22-22" } }];
-  console.log(paths);
   return {
     paths,
     fallback: false,

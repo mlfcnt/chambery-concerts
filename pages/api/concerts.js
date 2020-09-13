@@ -6,8 +6,8 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-  let dates = await req.db.collection("concerts").find().toArray();
-  res.json(dates);
+  const concerts = await req.db.collection("concerts").find().toArray();
+  res.json(concerts);
 });
 
 export default handler;
