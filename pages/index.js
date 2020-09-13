@@ -3,22 +3,26 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 const Home = ({ concerts }) => {
-  return <p>test</p>;
+  const alertNextShow = () => alert(concerts.artist.name);
+
+  return (
+    <div className="container">
+      <p>Chambéry concerts 2.0</p>
+      <p>Ultimate SEO</p>
+      <button onClick={alertNextShow}>test</button>
+    </div>
+  );
 };
 
 export default Home;
 
-const rootUrl = "http://localhost:3000";
-// process.env.NODE_ENV === "production"
-//   ? "https://chambe-concerts.herokuapp.com"
-//   : "http://localhost:3000";
-// process.env.NODE_ENV === "production"
-//   ? "https://chambe-concerts.herokuapp.com"
-//   : "http://localhost:3000";
+const rootUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://chambery-concerts.vercel.app"
+    : "http://localhost:3000";
 
 export const getStaticProps = async () => {
-  // const res = await fetch(`${rootUrl}/api/concerts/concerts_dates`);
-  // const concerts = await res.json();
-  const concerts = [];
+  const res = await fetch(`${rootUrl}/api/concerts/concerts_dates`);
+  const concerts = await res.json();
   return { props: { concerts } };
 };
