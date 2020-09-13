@@ -1,0 +1,29 @@
+.div_date_numbers {
+  display: inline-flex;
+  text-align: center;
+  justify-content: space-around;
+  font-size: 3rem;
+  width: 75%;
+}
+
+.div_date_numbers span {
+  font-size: 4vw;
+}
+
+.increment_button {
+  font-size: 4vw;
+  color: #0000004d;
+  background-color: transparent;
+}
+
+.increment_button:hover {
+  cursor: pointer;
+  color: #ed5c4d;
+  background-color: transparent;
+}
+
+.date_and_icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

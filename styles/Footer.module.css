@@ -1,0 +1,41 @@
+.footer {
+  margin-top: 4rem;
+  background-color: #273253;
+  display: flex;
+  justify-content: center;
+  color: #f4e9da;
+  align-items: center;
+}
+
+.footer_button {
+  color: #f4e9da;
+  padding: 0.2em 0.3em 0 0.3em;
+  margin: 0.3em 0.6em;
+  cursor: pointer;
+}
+
+.footer_button:hover {
+  color: #ed5c4d;
+}
+
+.footer_button a {
+  color: #f4e9da;
+}
+
+.footer_button:hover a {
+  color: #ed5c4d;
+}
+
+.footer_button a img {
+  display: flex;
+  width: 2em;
+}
+
+.simplon_button {
+  padding: 0 0.1em 0 0 !important;
+  width: 10px;
+}
+
+.footer .simplon_button {
+  justify-self: self-end !important;
+}

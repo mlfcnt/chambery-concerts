@@ -8,7 +8,8 @@ body {
 
 html {
   font-family: "Raleway", sans-serif;
-  background-color: #f4e9da;
+  background-color: #ed5c4d;
+  color: #f4e9da;
 }
 
 a {
@@ -26,4 +27,11 @@ header {
 
 main {
   text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
 }

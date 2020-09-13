@@ -1,27 +1,12 @@
 import React from "react";
-import { IconButton } from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import styles from "../../../../styles/MainDate.module.css";
+import { RiArrowDownSLine } from "react-icons/ri";
 
-export default function DecrementButton({
-  switchNumber,
-  displayButtons,
-  iconSize,
-  padding,
-}) {
+export default function DecrementButton({ switchNumber }) {
   return (
-    <IconButton
+    <RiArrowDownSLine
       onClick={() => switchNumber("subtract")}
-      style={{
-        backgroundColor: "transparent",
-        color: "#0000004d",
-        visibility: !displayButtons && "hidden",
-        padding: padding,
-      }}
-    >
-      <ExpandMoreIcon
-        style={{ fontSize: iconSize }}
-        className={"incrementBtn"}
-      />
-    </IconButton>
+      className={styles.increment_button}
+    />
   );
 }
