@@ -6,10 +6,10 @@ const Home = ({ concerts }) => {
   const alertNextShow = () => alert(concerts.artist.name);
 
   return (
-    <div className="container">
-      <p>Chambéry concerts 2.0</p>
+    <div className={styles.container}>
+      <p>chambéry concerts 2.0</p>
       <p>Ultimate SEO</p>
-      <button onClick={alertNextShow}>test</button>
+      <button onClick={alertNextShow}>Prochain concert</button>
     </div>
   );
 };
