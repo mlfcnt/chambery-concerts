@@ -1,16 +1,15 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import Layout from "../components/Ui/Layout";
 
 const Home = ({ concerts }) => {
-  const alertNextShow = () => alert(concerts.artist.name);
-
   return (
-    <div className={styles.container}>
+    <Layout className={styles.container}>
       <p>chambéry concerts 2.0</p>
       <p>Ultimate SEO</p>
-      <button onClick={alertNextShow}>Prochain concert</button>
-    </div>
+      <p>{concerts.length} concerts enregistrés en BDD</p>
+    </Layout>
   );
 };
 
@@ -22,7 +21,7 @@ const rootUrl =
     : "http://localhost:3000";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${rootUrl}/api/concerts/concerts_dates`);
+  const res = await fetch(`${rootUrl}/api/concerts`);
   const concerts = await res.json();
   return { props: { concerts } };
 };

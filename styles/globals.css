@@ -6,6 +6,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html {
+  font-family: "Raleway", sans-serif;
+  background-color: #f4e9da;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -13,4 +18,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  text-align: center;
 }
