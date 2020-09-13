@@ -24,8 +24,7 @@ const rootUrl =
     : "http://localhost:3000";
 
 export const getStaticProps = async () => {
-  // const res = await fetch(`${rootUrl}/api/concerts`);
-  // const concerts = await res.json();
-  const concerts = [];
+  const res = await fetch(`${rootUrl}/api/concerts`);
+  const concerts = await res.json();
   return { props: { concerts } };
 };
