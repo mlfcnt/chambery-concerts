@@ -40,6 +40,5 @@ export const getStaticProps = async ({ params: { concertDate } }) => {
     body: JSON.stringify({ concertDate }),
   });
   const concerts = await res.json();
-  const concerts = [];
   return { props: { concerts } };
 };
