@@ -2,7 +2,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { GrUserWorker } from "react-icons/gr";
+import { CgMusic } from "react-icons/cg";
 import { DateTime, Settings } from "luxon";
 import { RiVolumeUpLine } from "react-icons/ri";
 Settings.defaultLocale = "fr";
@@ -18,10 +18,10 @@ export default function Timeline({ concerts }) {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: "#273253", color: "#eaeaea" }}
-            contentArrowStyle={{ borderRight: "50px solid  #273253" }}
+            contentArrowStyle={{ borderRight: "10px solid  #273253" }}
             date={DateTime.fromISO(startDate).toFormat("ccc dd LLLL yyyy")}
-            iconStyle={{ background: "#273253", color: "#eaeaea" }}
-            icon={<GrUserWorker />}
+            iconStyle={{ background: "#eaeaea", color: "#273253" }}
+            icon={<CgMusic />}
           >
             <h3 className="vertical-timeline-element-title">
               Artist : {artist.name}
