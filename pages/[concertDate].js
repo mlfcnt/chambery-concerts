@@ -1,17 +1,18 @@
 import React from "react";
 import { getConcertsDates } from "../lib/concertsDates";
 import { DateTime, Settings } from "luxon";
+import Layout from "../components/Ui/Layout";
 Settings.defaultLocale = "fr";
 
 export default function concertDate({ concerts }) {
   const { artist, startDate, venue } = concerts[0];
 
   return (
-    <div>
+    <Layout>
       <h1>{DateTime.fromISO(startDate).toFormat("dd-LL-yyyy")}</h1>
       <p>Artist : {artist.name}</p>
       <p>Salle : {venue.name}</p>
-    </div>
+    </Layout>
   );
 }
 
