@@ -5,6 +5,12 @@ import Layout from "../components/Ui/Layout";
 Settings.defaultLocale = "fr";
 
 export default function concertDate({ concerts }) {
+  if (!concerts)
+    return (
+      <Layout>
+        <h1>Pas de concerts à cette date</h1>
+      </Layout>
+    );
   const { artist, startDate, venue } = concerts[0];
 
   return (

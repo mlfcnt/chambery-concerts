@@ -3,9 +3,11 @@ import ActualDate from "./ActualDate";
 import DecrementButton from "./DecrementButton";
 import IncrementButton from "./IncrementButton";
 import styles from "../../../../styles/MainDate.module.css";
-
+import { useRouter } from "next/router";
 export default function IncrementDate({ date, type, typeOfFormat }) {
+  const router = useRouter();
   const switchNumber = (operation) => {
+    router.push("http://localhost:3000/14-09-2021");
     // return operation === 'add'
     //   ? history.push({
     //       pathname: '/concerts',
