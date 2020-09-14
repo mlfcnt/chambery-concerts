@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../styles/Footer.module.css";
+import styles from "../../styles/Footer.module.css";
 import { FiTwitter } from "react-icons/fi";
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
             <FiTwitter />
           </a>
         </div>
-        <div className={styles.footer_button} className={styles.simplon_button}>
+        {/* <div className={styles.footer_button} className={styles.simplon_button}>
           <a
             href="https://auvergnerhonealpes.simplon.co/chambery.html"
             target="_blank"
@@ -26,7 +26,7 @@ export default function Footer() {
           >
             <img src="/logo_simplon.png" alt="Logo École Simplon" />
           </a>
-        </div>
+        </div> */}
       </footer>
     </>
   );

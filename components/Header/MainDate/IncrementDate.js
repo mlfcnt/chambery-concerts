@@ -2,7 +2,7 @@ import React from "react";
 import ActualDate from "./ActualDate";
 import DecrementButton from "./DecrementButton";
 import IncrementButton from "./IncrementButton";
-import styles from "../../../../styles/MainDate.module.css";
+import styles from "../../../styles/MainDate.module.css";
 import { useRouter } from "next/router";
 export default function IncrementDate({ date, type, typeOfFormat }) {
   const router = useRouter();

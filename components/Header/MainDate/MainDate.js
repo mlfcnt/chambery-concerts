@@ -1,6 +1,6 @@
 import React from "react";
 import IncrementDate from "./IncrementDate";
-import styles from "../../../../styles/MainDate.module.css";
+import styles from "../../../styles/MainDate.module.css";
 
 export default function MainDate({ date }) {
   return (

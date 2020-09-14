@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../../styles/MainDate.module.css";
+import styles from "../../../styles/MainDate.module.css";
 import { RiArrowUpSLine } from "react-icons/ri";
 
 export default function IncrementButton({ switchNumber }) {

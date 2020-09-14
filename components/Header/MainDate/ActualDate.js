@@ -1,5 +1,5 @@
 import React from "react";
-import { capitalizeFirstLetter } from "../../../../lib/helpers/helpers";
+import { capitalizeFirstLetter } from "../../../lib/helpers/helpers";
 import { DateTime, Settings } from "luxon";
 Settings.defaultLocale = "fr";
 
