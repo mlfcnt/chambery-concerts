@@ -1,6 +1,7 @@
 import React from "react";
 import { capitalizeFirstLetter } from "../../../../lib/helpers/helpers";
-import { DateTime } from "luxon";
+import { DateTime, Settings } from "luxon";
+Settings.defaultLocale = "fr";
 
 export default function ActualDate({ date, typeOfFormat }) {
   return (
