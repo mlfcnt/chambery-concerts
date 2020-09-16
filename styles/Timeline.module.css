@@ -1,0 +1,16 @@
+.hour {
+  color: #273253;
+  /* font-size: 3rem; */
+}
+
+.artist {
+  font-size: 2rem;
+}
+
+.venue {
+  font-size: 1.4rem;
+}
+
+.image {
+  max-width: 100%;
+}

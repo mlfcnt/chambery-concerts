@@ -1,9 +1,17 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/Ui/Layout";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { DateTime, Settings } from "luxon";
+Settings.defaultLocale = "fr";
 
 const Home = () => {
-  console.log(process.env.NEXT_PUBLIC_ENV);
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/" + DateTime.local().toFormat("dd-LL-yyyy"));
+  }, []);
   return (
     <Layout className={styles.container}>
       <Head>

@@ -3,22 +3,27 @@ import ActualDate from "./ActualDate";
 import DecrementButton from "./DecrementButton";
 import IncrementButton from "./IncrementButton";
 import styles from "../../../../styles/MainDate.module.css";
+import { DateTime } from "luxon";
 import { useRouter } from "next/router";
+import { useSplittedDate } from "../../../../lib/hooks/useSplittedDate";
 export default function IncrementDate({ date, type, typeOfFormat }) {
   const router = useRouter();
   const switchNumber = (operation) => {
-    router.push("http://localhost:3000/16-09-2020");
-    // return operation === 'add'
-    //   ? history.push({
-    //       pathname: '/concerts',
-    //       search: `${moment(date).add(1, type).format('DD-MM-YYYY')}`,
-    //     })
-    //   : history.push({
-    //       pathname: '/concerts',
-    //       search: `${moment(date)
-    //         .subtract(1, type)
-    //         .format('DD-MM-YYYY')}`,
-    //     });
+    const { day, month, year } = useSplittedDate(date);
+    const format = "dd-LL-yyyy";
+    return operation === "add"
+      ? router.push(
+          "/" +
+            DateTime.fromObject({ day, month, year })
+              .plus({ [type]: 1 })
+              .toFormat(format)
+        )
+      : router.push(
+          "/" +
+            DateTime.fromObject({ day, month, year })
+              .minus({ [type]: 1 })
+              .toFormat(format)
+        );
   };
 
   return (

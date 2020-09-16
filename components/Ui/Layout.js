@@ -6,7 +6,6 @@ import { DateTime, Settings } from "luxon";
 Settings.defaultLocale = "fr";
 
 export default function Layout({ date, children }) {
-  if (!date) date = DateTime.local();
   return (
     <div className={styles.container}>
       <Header date={date} />
