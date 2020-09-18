@@ -4,13 +4,14 @@ import Layout from "../components/Ui/Layout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { DateTime, Settings } from "luxon";
+import { ddLLyyyy } from "../lib/constants/dateFormat";
 Settings.defaultLocale = "fr";
 
 const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/" + DateTime.local().toFormat("dd-LL-yyyy"));
+    router.push("/" + DateTime.local().toFormat(ddLLyyyy));
   }, []);
   return (
     <Layout className={styles.container}>

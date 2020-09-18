@@ -5,9 +5,7 @@ import { DateTime, Settings } from "luxon";
 Settings.defaultLocale = "fr";
 
 export default function ActualDate({ date, typeOfFormat }) {
-  console.log(date);
   const { day, month, year } = useSplittedDate(date);
-
   return (
     <div style={{ width: "100%" }}>
       <span>

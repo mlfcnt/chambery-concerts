@@ -6,7 +6,7 @@ export default function Header({ date }) {
   return (
     <header>
       <MainDate date={date} />
-      <ShortcutButtons />
+      <ShortcutButtons date={date} />
     </header>
   );
 }

@@ -2,12 +2,15 @@ import React from "react";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import styles from "../../styles/Layout.module.css";
-import { DateTime, Settings } from "luxon";
-Settings.defaultLocale = "fr";
+import Head from "next/head";
 
-export default function Layout({ date, children }) {
+export default function Layout({ date, title, children }) {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header date={date} />
       <main>{children}</main>
       <Footer />

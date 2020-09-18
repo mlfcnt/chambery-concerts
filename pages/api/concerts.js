@@ -2,6 +2,7 @@
 import nextConnect from "next-connect";
 import middleware from "../../middleware/database";
 import { DateTime, Settings } from "luxon";
+import { ddLLyyyy } from "../../lib/constants/dateFormat";
 Settings.defaultLocale = "fr";
 
 const handler = nextConnect();
@@ -20,8 +21,8 @@ handler.post(async (req, res) => {
     .collection("concerts")
     .find({
       startDate: {
-        $gte: DateTime.fromFormat(date, "dd-LL-yyyy").startOf("day"),
-        $lt: DateTime.fromFormat(date, "dd-LL-yyyy").endOf("day"),
+        $gte: DateTime.fromFormat(date, ddLLyyyy).startOf("day"),
+        $lt: DateTime.fromFormat(date, ddLLyyyy).endOf("day"),
       },
     })
     .sort({ date: 1 })
