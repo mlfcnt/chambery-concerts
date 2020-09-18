@@ -1,6 +1,6 @@
 import React from "react";
 import MainDate from "./MainDate/MainDate";
-import ShortcutButtons from "./ShortcutButtons";
+import ShortcutButtons from "./ShortcutButtons/ShortcutButtons";
 
 export default function Header({ date }) {
   return (

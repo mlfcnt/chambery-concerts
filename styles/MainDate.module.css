@@ -2,16 +2,16 @@
   display: inline-flex;
   text-align: center;
   justify-content: space-around;
-  font-size: 3rem;
   width: 75%;
+  margin-bottom: 2vh;
 }
 
 .div_date_numbers span {
-  font-size: 4vw;
+  font-size: 6vw;
 }
 
 .increment_button {
-  font-size: 4vw;
+  font-size: 8vh;
   color: #0000004d;
   background-color: transparent;
 }

@@ -6,8 +6,7 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 import { useGrouppedConcerts } from "../lib/hooks/useGrouppedConcerts";
 import { rootUrl } from "../lib/constants/urls";
 import { useTimeline } from "../lib/hooks/useTimeline";
-import { DateTime, Settings } from "luxon";
-Settings.defaultLocale = "fr";
+
 export default function concertDate({ concerts }) {
   let router = useRouter();
   const date = router.query.concertDate || "";
