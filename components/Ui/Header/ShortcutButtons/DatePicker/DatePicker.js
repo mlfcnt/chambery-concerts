@@ -7,12 +7,6 @@ import RDP from "react-datepicker";
 Settings.defaultLocale = "fr";
 
 export default function DatePicker({ date }) {
-  console.log("1", date);
-  console.log(
-    "2",
-    DateTime.fromFormat(date, "dd-LL-yyyy").toFormat("LL/dd/yyyy")
-  );
-  console.log("3", DateTime.toLocaleString(DateTime.DATE_SHORT));
   let router = useRouter();
 
   const handleChange = (date) => {
@@ -21,7 +15,7 @@ export default function DatePicker({ date }) {
   return (
     <RDP
       locale="fr"
-      selected={DateTime.toLocaleString(DateTime.DATE_SHORT)}
+      selected={new Date()}
       onChange={(date) => handleChange(date)}
       dateFormat="dd/mm/yyyy"
     />
