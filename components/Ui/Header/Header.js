@@ -5,8 +5,8 @@ import ShortcutButtons from "./ShortcutButtons/ShortcutButtons";
 export default function Header({ date }) {
   return (
     <header>
-      <MainDate date={date} />
       <ShortcutButtons date={date} />
+      <MainDate date={date} />
     </header>
   );
 }

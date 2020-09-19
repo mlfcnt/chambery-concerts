@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import "react-vertical-timeline-component/style.min.css";
-import "carbon-components/scss/globals/scss/styles.scss";
+import "react-datepicker/dist/react-datepicker.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

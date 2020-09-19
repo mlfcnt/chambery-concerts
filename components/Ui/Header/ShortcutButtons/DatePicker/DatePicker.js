@@ -1,32 +1,29 @@
 import React from "react";
-import {
-  DatePicker as DatePickerCarbon,
-  DatePickerInput,
-} from "carbon-components-react";
+
 import { useRouter } from "next/router";
 import { ddLLyyyy } from "../../../../../lib/constants/dateFormat";
 import { DateTime, Settings } from "luxon";
+import RDP from "react-datepicker";
 Settings.defaultLocale = "fr";
 
-export default function DatePicker() {
+export default function DatePicker({ date }) {
+  console.log("1", date);
+  console.log(
+    "2",
+    DateTime.fromFormat(date, "dd-LL-yyyy").toFormat("LL/dd/yyyy")
+  );
+  console.log("3", DateTime.toLocaleString(DateTime.DATE_SHORT));
   let router = useRouter();
 
   const handleChange = (date) => {
-    router.push(
-      "/" + DateTime.fromFormat(date, "dd/LL/yyyy").toFormat(ddLLyyyy)
-    );
+    router.push("/" + DateTime.fromJSDate(date).toFormat(ddLLyyyy));
   };
   return (
-    <DatePickerCarbon dateFormat="d/m/Y" datePickerType="simple" locale="fr">
-      <DatePickerInput
-        id="date-picker-calendar-id"
-        placeholder="mm/dd/yyyy"
-        onInput={(e) => handleChange(e.target.value)}
-        // labelText="Choix de la date"
-        hideLabel={true}
-        type="text"
-        size="sm"
-      />
-    </DatePickerCarbon>
+    <RDP
+      locale="fr"
+      selected={DateTime.toLocaleString(DateTime.DATE_SHORT)}
+      onChange={(date) => handleChange(date)}
+      dateFormat="dd/mm/yyyy"
+    />
   );
 }

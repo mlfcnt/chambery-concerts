@@ -1,6 +1,26 @@
 .container {
-  display: inline-flex;
-  text-align: center;
-  justify-content: space-around;
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  background-color: #273253;
+  color: #f4e9da;
+  padding: 2vh;
+}
+
+.description {
+  justify-self: start;
+}
+
+.shortcuts_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: baseline;
+}
+
+.shortcut_button {
+  color: #ed5c4d;
+  font-size: 2.5vh;
+}
+.shortcut_button:hover {
+  background-color: #ed5c4d;
 }

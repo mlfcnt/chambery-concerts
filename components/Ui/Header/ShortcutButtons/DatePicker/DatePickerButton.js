@@ -1,11 +1,12 @@
 import React from "react";
 import DatePicker from "./DatePicker";
 
-export default function DatePickerButton() {
+export default function DatePickerButton({ date }) {
   return (
     <div>
       {/* <button onClick={toggleCalendar}>Calendar</button> */}
-      <DatePicker />
+      <DatePicker date={date} />
+      {/* <span>DatePicker</span> */}
     </div>
   );
 }

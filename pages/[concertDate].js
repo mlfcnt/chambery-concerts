@@ -6,6 +6,7 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 import { useGrouppedConcerts } from "../lib/hooks/useGrouppedConcerts";
 import { rootUrl } from "../lib/constants/urls";
 import { useTimeline } from "../lib/hooks/useTimeline";
+import styles from "../styles/ConcertDate.module.css";
 
 export default function concertDate({ concerts }) {
   let router = useRouter();
@@ -20,7 +21,7 @@ export default function concertDate({ concerts }) {
   if (!concerts.length) {
     return (
       <Layout date={date} title={`chambery-concerts - ${date}`}>
-        <h1>Pas de concerts à cette date</h1>
+        <h1 className={styles.no_show}>Pas de concerts à cette date</h1>
       </Layout>
     );
   }
