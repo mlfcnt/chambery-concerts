@@ -2,7 +2,8 @@ import React from "react";
 import IncrementDate from "./IncrementDate";
 import styles from "../../../../styles/MainDate.module.css";
 
-export default function MainDate({ date }) {
+export default function MainDate({ date, nodate }) {
+  if (nodate) return null;
   return (
     <div className={styles.div_date_numbers}>
       <IncrementDate date={date} type={"day"} typeOfFormat={"ccc"} />

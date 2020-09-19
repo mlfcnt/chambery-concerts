@@ -10,7 +10,8 @@ export default function ProchainsConcerts({ concerts }) {
   const groupped = useGrouppedConcerts(concerts, ddLLyyyy, true);
   const cards = useTimeline(groupped, "DDDD");
   return (
-    <Layout title="chambery-concerts - Prochains concerts">
+    <Layout title="chambery-concerts - Prochains concerts" nodate>
+      <h1>Prochains concerts</h1>
       <VerticalTimeline>{cards}</VerticalTimeline>
     </Layout>
   );

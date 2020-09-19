@@ -10,6 +10,7 @@
 .description {
   /* justify-self: start; */
   margin-right: auto;
+  cursor: pointer;
 }
 
 .shortcuts_flex {
