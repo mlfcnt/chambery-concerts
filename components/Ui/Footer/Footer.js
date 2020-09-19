@@ -10,7 +10,7 @@ export default function Footer() {
           <ContactForm />
         </div> */}
 
-        <span>Recevez les concerts en notification sur</span>
+        <span>Soyez notifié des concerts sur</span>
         <div className={styles.footer_button}>
           <a
             href="https://twitter.com/chambe_concerts"
@@ -20,7 +20,14 @@ export default function Footer() {
             <FiTwitter />
           </a>
         </div>
-        <span>@chambe-concerts</span>
+        <a
+          className={styles.twitter_handle}
+          href="https://twitter.com/chambe_concerts"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @chambe-concerts
+        </a>
         {/* <div className={styles.footer_button} className={styles.simplon_button}>
           <a
             href="https://auvergnerhonealpes.simplon.co/chambery.html"

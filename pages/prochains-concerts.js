@@ -8,7 +8,7 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 
 export default function ProchainsConcerts({ concerts }) {
   const groupped = useGrouppedConcerts(concerts, ddLLyyyy, true);
-  const cards = useTimeline(groupped, ddLLyyyy);
+  const cards = useTimeline(groupped, "DDDD");
   return (
     <Layout title="chambery-concerts - Prochains concerts">
       <VerticalTimeline>{cards}</VerticalTimeline>

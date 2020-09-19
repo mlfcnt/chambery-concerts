@@ -1,14 +1,15 @@
 import React from "react";
 import { capitalizeFirstLetter } from "../../../../lib/helpers/helpers";
 import { useSplittedDate } from "../../../../lib/hooks/useSplittedDate";
+import styles from "../../../../styles/ActualDate.module.css";
 import { DateTime, Settings } from "luxon";
 Settings.defaultLocale = "fr";
 
 export default function ActualDate({ date, typeOfFormat }) {
   const { day, month, year } = useSplittedDate(date);
   return (
-    <div style={{ width: "100%" }}>
-      <span>
+    <div>
+      <span className={styles.actual_date}>
         {capitalizeFirstLetter(
           DateTime.fromObject(date ? { day, month, year } : {}).toFormat(
             typeOfFormat

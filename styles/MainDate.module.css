@@ -2,8 +2,9 @@
   display: inline-flex;
   text-align: center;
   justify-content: space-around;
-  width: 75%;
+  width: 90%;
   margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 .div_date_numbers span {
@@ -11,7 +12,7 @@
 }
 
 .increment_button {
-  font-size: 8vh;
+  font-size: 5vh;
   color: #0000004d;
   background-color: transparent;
 }

@@ -5,7 +5,7 @@
   justify-content: center;
   color: #f4e9da;
   align-items: center;
-  font-size: 2vh;
+  font-size: 1.7vh;
 }
 
 .footer_button {
@@ -21,6 +21,9 @@
 
 .footer_button a {
   color: #f4e9da;
+  display: inline-block;
+  font-size: 2.2vh;
+  display: grid;
 }
 
 .footer_button:hover a {
@@ -39,4 +42,8 @@
 
 .footer .simplon_button {
   justify-self: self-end !important;
+}
+
+.twitter_handle {
+  color: #ed5c4d;
 }

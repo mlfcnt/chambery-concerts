@@ -1,20 +1,21 @@
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
   background-color: #273253;
   color: #f4e9da;
   padding: 2vh;
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .description {
-  justify-self: start;
+  /* justify-self: start; */
+  margin-right: auto;
 }
 
-.shortcuts_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: baseline;
+.shortcuts_flex {
+  display: flex;
+  text-align: center;
+  justify-items: center;
 }
 
 .shortcut_button {
