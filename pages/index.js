@@ -22,8 +22,7 @@ const Home = () => {
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <p>chambéry concerts 2.0</p>
-      <p>Ultimate SEO 3000</p>
+      <p>Chargement des concerts....</p>
     </Layout>
   );
 };
