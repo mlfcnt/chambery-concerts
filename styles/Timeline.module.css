@@ -14,3 +14,25 @@
 .image {
   max-width: 100%;
 }
+
+.url_description {
+  display: block;
+  margin-top: 3vh;
+  background-color: #273253;
+  color: #f4e9da;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1vh;
+  width: max-content;
+}
+
+.url_description:hover {
+  display: block;
+  margin-top: 3vh;
+  background-color: #f4e9da;
+  color: #ed5c4d;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1vh;
+  width: max-content;
+}
