@@ -3,8 +3,8 @@ import styles from "../styles/Home.module.css";
 import Layout from "../components/Ui/Layout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { DateTime, Settings } from "luxon";
 import { ddLLyyyy } from "../lib/constants/dateFormat";
+import { DateTime, Settings } from "luxon";
 Settings.defaultLocale = "fr";
 
 const Home = () => {
