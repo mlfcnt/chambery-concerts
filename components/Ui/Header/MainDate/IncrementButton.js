@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "../../../../styles/MainDate.module.css";
 import { RiArrowUpSLine } from "react-icons/ri";
+import Link from "next/link";
 
-export default function IncrementButton({ switchNumber }) {
+export default function IncrementButton({ generateHref }) {
   return (
-    <RiArrowUpSLine
-      onClick={() => switchNumber("add")}
-      className={styles.increment_button}
-    />
+    <Link href={generateHref("add")}>
+      <a>
+        <RiArrowUpSLine className={styles.increment_button} />
+      </a>
+    </Link>
   );
 }
