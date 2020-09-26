@@ -7,8 +7,8 @@ import { DateTime } from "luxon";
 import { useSplittedDate } from "../../../../lib/hooks/useSplittedDate";
 import { ddLLyyyy } from "../../../../lib/constants/dateFormat";
 export default function IncrementDate({ date, type, typeOfFormat }) {
-  console.log(date);
   const generateHref = (operation) => {
+    if (!date || !operation) return "/"; // evite de crasher au build
     const { day, month, year } = useSplittedDate(date);
     return operation === "add"
       ? "/" +

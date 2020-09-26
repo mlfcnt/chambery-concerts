@@ -18,7 +18,6 @@ export default function DatePicker() {
       dateFormat="dd/mm/yyyy"
       placeholderText="Choisir une date"
       todayButton="Aujourdh'hui"
-      // highlightDates={[subDays(new Date(), 7), addDays(new Date(), 7)]}
     />
   );
 }
