@@ -1,0 +1,12 @@
+.scroll_to_top_button {
+  position: fixed;
+  bottom: 3vh;
+  left: 1vw;
+  cursor: pointer;
+  font-size: 5vh;
+  display: flex;
+  align-items: center;
+}
+.scroll_to_top_button span {
+  font-size: 3vh;
+}
