@@ -15,8 +15,8 @@ export default function concertDate({ concerts }) {
   let router = useRouter();
   const date = router.query.concertDate || "";
   const seoDate = DateTime.fromFormat(date, "dd-LL-yyyy").toFormat("DDDD");
-  const seoTitle = `Concerts du ${seoDate} à Chambéry`;
-  const seoDescription = `Page listant les concerts ayant lieu le ${seoDate} à Chambéry.`;
+  const seoTitle = `Concerts aujourd'hui à Chambéry`;
+  const seoDescription = `Page listant les concerts ayant lieu aujourd'hui à Chambéry.`;
 
   if (router.isFallback) {
     return (
