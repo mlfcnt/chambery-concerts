@@ -25,11 +25,24 @@ export default function ProchainsConcerts({ concerts }) {
       <NextSeo title={seoTitle} description={seoDescription} />
       <Layout title="chambery-concerts - Prochains concerts" nodate>
         <h1>Prochains concerts</h1>
-        <VerticalTimeline>{cards}</VerticalTimeline>
-        <a onClick={scrollToTop} className={styles.scroll_to_top_button}>
-          <HiArrowNarrowUp />
-          {isDesktopOrLaptop() && <span>Retour au sommet</span>}
-        </a>
+        {cards.length ? (
+          <>
+            <VerticalTimeline>{cards}</VerticalTimeline>
+            <a onClick={scrollToTop} className={styles.scroll_to_top_button}>
+              <HiArrowNarrowUp />
+              {isDesktopOrLaptop() && <span>Retour au sommet</span>}
+            </a>
+          </>
+        ) : (
+          <>
+            <h2>Pas de concerts prévus... F Covid</h2>
+            <h3>
+              Si vous souhaitez que les prochains concerts de votre
+              établissement soit affichés ici, vous pouvez me contacter :
+              tommymartin1234 at gmail.com
+            </h3>
+          </>
+        )}
       </Layout>
     </>
   );
@@ -38,6 +51,5 @@ export default function ProchainsConcerts({ concerts }) {
 export const getStaticProps = async () => {
   const res = await fetch(`${rootUrl}/api/concerts`);
   const concerts = await res.json();
-
   return { props: concerts ? { concerts } : [] };
 };
