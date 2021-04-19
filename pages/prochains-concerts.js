@@ -34,14 +34,7 @@ export default function ProchainsConcerts({ concerts }) {
             </a>
           </>
         ) : (
-          <>
-            <h2>Pas de concerts prévus... F Covid</h2>
-            <h3>
-              Si vous souhaitez que les prochains concerts de votre
-              établissement soit affichés ici, vous pouvez me contacter :
-              tommymartin1234 at gmail.com
-            </h3>
-          </>
+          <h2>Pas de concerts prévus pour le moment...</h2>
         )}
       </Layout>
     </>
