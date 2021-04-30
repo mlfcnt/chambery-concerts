@@ -14,7 +14,7 @@ handler.get(async (req, res) => {
     const concerts = await req.db.collection("concerts").find().toArray();
     res.json(concerts);
   } catch (error) {
-    console.error(error?.message || error);
+    throw new Error(error?.message || error);
   }
 });
 
@@ -34,7 +34,7 @@ handler.post(async (req, res) => {
       .toArray();
     res.json(concerts);
   } catch (error) {
-    console.error(error?.message || error);
+    throw new Error(error?.message || error);
   }
 });
 
