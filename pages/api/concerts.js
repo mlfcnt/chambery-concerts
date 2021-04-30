@@ -12,6 +12,7 @@ handler.use(middleware);
 handler.get(async (req, res) => {
   try {
     const concerts = await req.db.collection("concerts").find().toArray();
+    console.log("👽CLG - concerts", concerts);
     res.json(concerts);
   } catch (error) {
     console.error(error?.message || error);
