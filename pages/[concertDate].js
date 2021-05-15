@@ -1,20 +1,20 @@
-import React from "react";
-import { getConcertsDates } from "../lib/concertsDates";
-import Layout from "../components/Ui/Layout";
-import { useRouter } from "next/router";
-import { VerticalTimeline } from "react-vertical-timeline-component";
-import { useGrouppedConcerts } from "../lib/hooks/useGrouppedConcerts";
-import { rootUrl } from "../lib/constants/urls";
-import { useTimeline } from "../lib/hooks/useTimeline";
-import styles from "../styles/ConcertDate.module.css";
-import { NextSeo } from "next-seo";
-import { DateTime, Settings } from "luxon";
-Settings.defaultLocale = "fr";
+import React from 'react';
+import { getConcertsDates } from '../lib/concertsDates';
+import Layout from '../components/Ui/Layout';
+import { useRouter } from 'next/router';
+import { VerticalTimeline } from 'react-vertical-timeline-component';
+import { useGrouppedConcerts } from '../lib/hooks/useGrouppedConcerts';
+import { rootUrl } from '../lib/constants/urls';
+import { useTimeline } from '../lib/hooks/useTimeline';
+import styles from '../styles/ConcertDate.module.css';
+import { NextSeo } from 'next-seo';
+import { DateTime, Settings } from 'luxon';
+Settings.defaultLocale = 'fr';
 
 export default function concertDate({ concerts }) {
   let router = useRouter();
-  const date = router.query.concertDate || "";
-  const seoDate = DateTime.fromFormat(date, "dd-LL-yyyy").toFormat("DDDD");
+  const date = router.query.concertDate || '';
+  const seoDate = DateTime.fromFormat(date, 'dd-LL-yyyy').toFormat('DDDD');
   const seoTitle = `Concerts aujourd'hui à Chambéry`;
   const seoDescription = `Page listant les concerts ayant lieu aujourd'hui à Chambéry.`;
 
@@ -39,8 +39,8 @@ export default function concertDate({ concerts }) {
     );
   }
 
-  const grouppedByHour = useGrouppedConcerts(concerts, "HH:mm");
-  const cards = useTimeline(grouppedByHour, "HH:mm");
+  const grouppedByHour = useGrouppedConcerts(concerts, 'HH:mm');
+  const cards = useTimeline(grouppedByHour, 'HH:mm');
 
   return (
     <>
@@ -64,10 +64,10 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async ({ params: { concertDate } }) => {
   const res = await fetch(`${rootUrl}/api/concerts`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ concertDate }),
   });

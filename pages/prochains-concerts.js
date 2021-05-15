@@ -1,18 +1,21 @@
-import Layout from "../components/Ui/Layout";
-import { ddLLyyyy } from "../lib/constants/dateFormat";
-import { rootUrl } from "../lib/constants/urls";
-import { useGrouppedConcerts } from "../lib/hooks/useGrouppedConcerts";
-import { useTimeline } from "../lib/hooks/useTimeline";
-import { NextSeo } from "next-seo";
-import { VerticalTimeline } from "react-vertical-timeline-component";
-import { animateScroll as scroll } from "react-scroll";
-import styles from "../styles/Prochains-concerts.module.css";
-import { HiArrowNarrowUp } from "react-icons/hi";
-import { isDesktopOrLaptop } from "../lib/helpers/reponsive";
+import { useState } from 'react';
+import Layout from '../components/Ui/Layout';
+import { ddLLyyyy } from '../lib/constants/dateFormat';
+import { rootUrl } from '../lib/constants/urls';
+import { useGrouppedConcerts } from '../lib/hooks/useGrouppedConcerts';
+import { useTimeline } from '../lib/hooks/useTimeline';
+import { NextSeo } from 'next-seo';
+import { VerticalTimeline } from 'react-vertical-timeline-component';
+import { animateScroll as scroll } from 'react-scroll';
+import styles from '../styles/Prochains-concerts.module.css';
+import { HiArrowNarrowUp } from 'react-icons/hi';
+import { isDesktopOrLaptop } from '../lib/helpers/reponsive';
+import { ConcertsFilters } from '../components/ConcertsFilters';
 
 export default function ProchainsConcerts({ concerts }) {
-  const groupped = useGrouppedConcerts(concerts, ddLLyyyy, true);
-  const cards = useTimeline(groupped, "DDDD");
+  const [filteredShows, setFilteredShows] = useState([]);
+  const groupped = useGrouppedConcerts(filteredShows, ddLLyyyy, true);
+  const cards = useTimeline(groupped, 'DDDD');
   const seoTitle = `Prochains concerts ayant lieu à Chambéry`;
   const seoDescription = `Page listant les prochains concerts ayant lieu à Chambéry.`;
 
@@ -27,6 +30,7 @@ export default function ProchainsConcerts({ concerts }) {
         <h1>Prochains concerts</h1>
         {cards.length ? (
           <>
+            <ConcertsFilters concerts={filteredShows} setConcerts={setFilteredShows} />
             <VerticalTimeline>{cards}</VerticalTimeline>
             <a onClick={scrollToTop} className={styles.scroll_to_top_button}>
               <HiArrowNarrowUp />
