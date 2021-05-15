@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import 'react-vertical-timeline-component/style.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import 'antd/dist/antd.css';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

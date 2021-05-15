@@ -15,6 +15,7 @@
     "carbon-components-react": "^7.20.0",
     "carbon-icons": "^7.0.7",
     "date-fns": "^2.16.1",
+    "dayjs": "^1.10.4",
     "less": "^4.1.1",
     "luxon": "^1.25.0",
     "mongodb": "^3.6.2",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "globby": "^11.0.1"
   }
 }

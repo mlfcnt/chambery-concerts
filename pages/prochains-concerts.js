@@ -11,6 +11,7 @@ import styles from '../styles/Prochains-concerts.module.css';
 import { HiArrowNarrowUp } from 'react-icons/hi';
 import { isDesktopOrLaptop } from '../lib/helpers/reponsive';
 import { ConcertsFilters } from '../components/ConcertsFilters';
+import dayjs from 'dayjs';
 
 export default function ProchainsConcerts({ concerts }) {
   const [filteredConcerts, setFilteredConcerts] = useState(concerts);
@@ -28,7 +29,7 @@ export default function ProchainsConcerts({ concerts }) {
       <NextSeo title={seoTitle} description={seoDescription} />
       <Layout title="chambery-concerts - Prochains concerts" nodate>
         <h1>Prochains concerts</h1>
-        <ConcertsFilters concerts={concerts} setConcerts={setFilteredConcerts} />
+        <ConcertsFilters concerts={concerts} setFilteredConcerts={setFilteredConcerts} />
         {cards.length ? (
           <>
             <VerticalTimeline>{cards}</VerticalTimeline>
@@ -48,5 +49,9 @@ export default function ProchainsConcerts({ concerts }) {
 export const getStaticProps = async () => {
   const res = await fetch(`${rootUrl}/api/concerts`);
   const concerts = await res.json();
-  return { props: concerts ? { concerts } : [] };
+  return {
+    props: concerts
+      ? { concerts: concerts.filter((x) => dayjs(x.startDate).isAfter(dayjs())) }
+      : [],
+  };
 };
