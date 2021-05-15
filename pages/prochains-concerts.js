@@ -10,12 +10,10 @@ import { animateScroll as scroll } from 'react-scroll';
 import styles from '../styles/Prochains-concerts.module.css';
 import { HiArrowNarrowUp } from 'react-icons/hi';
 import { isDesktopOrLaptop } from '../lib/helpers/reponsive';
-import { ConcertsFilters } from '../components/ConcertsFilters';
 import dayjs from 'dayjs';
 
 export default function ProchainsConcerts({ concerts }) {
-  const [filteredConcerts, setFilteredConcerts] = useState(concerts);
-  const groupped = useGrouppedConcerts(filteredConcerts, ddLLyyyy, true);
+  const groupped = useGrouppedConcerts(concerts, ddLLyyyy, true);
   const cards = useTimeline(groupped, 'DDDD');
   const seoTitle = `Prochains concerts ayant lieu à Chambéry`;
   const seoDescription = `Page listant les prochains concerts ayant lieu à Chambéry.`;
@@ -29,7 +27,6 @@ export default function ProchainsConcerts({ concerts }) {
       <NextSeo title={seoTitle} description={seoDescription} />
       <Layout title="chambery-concerts - Prochains concerts" nodate>
         <h1>Prochains concerts</h1>
-        <ConcertsFilters concerts={concerts} setFilteredConcerts={setFilteredConcerts} />
         {cards.length ? (
           <>
             <VerticalTimeline>{cards}</VerticalTimeline>
@@ -51,7 +48,7 @@ export const getStaticProps = async () => {
   const concerts = await res.json();
   return {
     props: concerts
-      ? { concerts: concerts.filter((x) => dayjs(x.startDate).isAfter(dayjs())) }
+      ? { concerts: concerts.filter((x) => dayjs(x.startDate).isAfter(dayjs()) && !x.isCanceled) }
       : [],
   };
 };
