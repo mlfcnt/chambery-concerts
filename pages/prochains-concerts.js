@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Ui/Layout';
 import { ddLLyyyy } from '../lib/constants/dateFormat';
 import { rootUrl } from '../lib/constants/urls';
@@ -10,9 +10,11 @@ import { animateScroll as scroll } from 'react-scroll';
 import styles from '../styles/Prochains-concerts.module.css';
 import { HiArrowNarrowUp } from 'react-icons/hi';
 import { isDesktopOrLaptop } from '../lib/helpers/reponsive';
+import { ConcertsFilters } from '../components/ConcertsFilters';
 
 export default function ProchainsConcerts({ concerts }) {
-  const groupped = useGrouppedConcerts(concerts, ddLLyyyy, true);
+  const [filteredConcerts, setFilteredConcerts] = useState(concerts);
+  const groupped = useGrouppedConcerts(filteredConcerts, ddLLyyyy, true);
   const cards = useTimeline(groupped, 'DDDD');
   const seoTitle = `Prochains concerts ayant lieu à Chambéry`;
   const seoDescription = `Page listant les prochains concerts ayant lieu à Chambéry.`;
@@ -26,6 +28,7 @@ export default function ProchainsConcerts({ concerts }) {
       <NextSeo title={seoTitle} description={seoDescription} />
       <Layout title="chambery-concerts - Prochains concerts" nodate>
         <h1>Prochains concerts</h1>
+        <ConcertsFilters concerts={concerts} setConcerts={setFilteredConcerts} />
         {cards.length ? (
           <>
             <VerticalTimeline>{cards}</VerticalTimeline>
