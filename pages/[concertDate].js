@@ -1,18 +1,18 @@
 import React from 'react';
 import { getConcertsDates } from '../lib/concertsDates';
 import Layout from '../components/Ui/Layout';
-import { useRouter } from 'next/router';
+import { useRouter as UseRouter } from 'next/router';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
-import { useGrouppedConcerts } from '../lib/hooks/useGrouppedConcerts';
+import { getGrouppedConcerts } from '../lib/helpers/getGrouppedConcerts';
 import { rootUrl } from '../lib/constants/urls';
-import { useTimeline } from '../lib/hooks/useTimeline';
+import { generateTimeline } from '../lib/helpers/getTimeline';
 import styles from '../styles/ConcertDate.module.css';
 import { NextSeo } from 'next-seo';
 import { Settings } from 'luxon';
 Settings.defaultLocale = 'fr';
 
 export default function concertDate({ concerts }) {
-  let router = useRouter();
+  let router = UseRouter();
   const date = router.query.concertDate || '';
   const seoTitle = `Concerts aujourd'hui à Chambéry`;
   const seoDescription = `Page listant les concerts ayant lieu aujourd'hui à Chambéry.`;
@@ -38,8 +38,8 @@ export default function concertDate({ concerts }) {
     );
   }
 
-  const grouppedByHour = useGrouppedConcerts(concerts, 'HH:mm');
-  const cards = useTimeline(grouppedByHour, 'HH:mm');
+  const grouppedByHour = getGrouppedConcerts(concerts, 'HH:mm');
+  const cards = generateTimeline(grouppedByHour, 'HH:mm');
 
   return (
     <>
@@ -72,5 +72,5 @@ export const getStaticProps = async ({ params: { concertDate } }) => {
   });
   const concerts = await res.json();
 
-  return { props: concerts ? { concerts } : [] };
+  return { props: concerts ? { concerts: concerts.filter((x) => !x.isCanceled) } : [] };
 };

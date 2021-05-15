@@ -12,13 +12,12 @@ const Home = () => {
 
   useEffect(() => {
     router.push('/' + DateTime.local().toFormat(ddLLyyyy));
-  }, []);
+  }, [router]);
+
   return (
     <Layout className={styles.container}>
       <Head>
-        <title>
-          chambery-concerts.fr {process.env.NEXT_PUBLIC_ENV === 'local' ? ` - DEV` : ''}
-        </title>
+        <title>chambery-concerts.fr</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <p>Chargement des concerts....</p>

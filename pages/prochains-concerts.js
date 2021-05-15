@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../components/Ui/Layout';
 import { ddLLyyyy } from '../lib/constants/dateFormat';
 import { rootUrl } from '../lib/constants/urls';
-import { useGrouppedConcerts } from '../lib/hooks/useGrouppedConcerts';
-import { useTimeline } from '../lib/hooks/useTimeline';
+import { getGrouppedConcerts } from '../lib/helpers/getGrouppedConcerts';
+import { generateTimeline } from '../lib/helpers/getTimeline';
 import { NextSeo } from 'next-seo';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import { animateScroll as scroll } from 'react-scroll';
@@ -13,8 +13,8 @@ import { isDesktopOrLaptop } from '../lib/helpers/reponsive';
 import dayjs from 'dayjs';
 
 export default function ProchainsConcerts({ concerts }) {
-  const groupped = useGrouppedConcerts(concerts, ddLLyyyy, true);
-  const cards = useTimeline(groupped, 'DDDD');
+  const groupped = getGrouppedConcerts(concerts, ddLLyyyy, true);
+  const cards = generateTimeline(groupped, 'DDDD');
   const seoTitle = `Prochains concerts ayant lieu à Chambéry`;
   const seoDescription = `Page listant les prochains concerts ayant lieu à Chambéry.`;
 

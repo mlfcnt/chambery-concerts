@@ -13,7 +13,7 @@ export default function TodayButton({ date }) {
   return (
     <Link href={'/' + DateTime.local().toFormat(ddLLyyyy)}>
       <a>
-        <SuperCoolButton>Aujourd'hui</SuperCoolButton>
+        <SuperCoolButton>{"Aujourd'hui"}</SuperCoolButton>
       </a>
     </Link>
   );
