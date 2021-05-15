@@ -16,7 +16,7 @@ export default function DatePicker() {
       locale="fr"
       onChange={(date) => handleChange(date)}
       dateFormat="dd/mm/yyyy"
-      placeholderText="Choisir une date"
+      value="Choisir une date"
       todayButton="Aujourdh'hui"
     />
   );
