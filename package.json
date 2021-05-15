@@ -36,6 +36,8 @@
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-plugin-react": "^7.23.2",
     "globby": "^11.0.1"
   }
 }

@@ -4,15 +4,19 @@
 }
 
 .artist {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin: 20px auto;
+  font-weight: 700;
 }
 
 .venue {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 .image {
   max-width: 100%;
+  max-height: 50vh;
 }
 
 .url_description {

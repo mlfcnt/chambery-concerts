@@ -8,13 +8,12 @@ import { rootUrl } from '../lib/constants/urls';
 import { useTimeline } from '../lib/hooks/useTimeline';
 import styles from '../styles/ConcertDate.module.css';
 import { NextSeo } from 'next-seo';
-import { DateTime, Settings } from 'luxon';
+import { Settings } from 'luxon';
 Settings.defaultLocale = 'fr';
 
 export default function concertDate({ concerts }) {
   let router = useRouter();
   const date = router.query.concertDate || '';
-  const seoDate = DateTime.fromFormat(date, 'dd-LL-yyyy').toFormat('DDDD');
   const seoTitle = `Concerts aujourd'hui à Chambéry`;
   const seoDescription = `Page listant les concerts ayant lieu aujourd'hui à Chambéry.`;
 
